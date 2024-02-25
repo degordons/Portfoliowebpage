@@ -1,0 +1,583 @@
+/* Reset some default styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the background overlay color and opacity */
+    z-index: 0;
+}
+
+h1, p {
+    margin: 0;
+}
+
+/* Additional styles for better readability */
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Navigation Menu Styles */
+.navigation-menu {
+    background: #333; /* Dark background color for the menu */
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navigation-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation-menu li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.navigation-menu a:hover {
+    color: #ffca28; /* Change color on hover */
+}
+
+.navigation-menu.active {
+    display: block;
+}
+
+/* Shared Section Styles */
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: #ffe600;
+    text-align: center;
+    padding: 100px 0;
+}
+
+/* About Me Section Styles */
+.about-me-section,
+.project {
+    display: block;
+    color: blue; /* Change this to your desired text color */
+}
+
+/* Navigation Menu Styles */
+.navigation-menu.active #about-me,
+.navigation-menu.active #skills {
+    display: block;
+}
+
+/* Portfolio Section Styles */
+#portfolio {
+    background: #f9f9f9; /* Set a background color for the portfolio section */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project {
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+    border-radius: 8px;
+}
+
+.project:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.project:hover img {
+    transform: scale(1.05); /* Adjust the scale factor as desired */
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 8px;
+}
+
+.project:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h3,
+.project-overlay p {
+    color: #fff;
+}
+
+.interactions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.interactions button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.interactions button:hover {
+    background-color: #555;
+}
+
+/* Contact Section Styles */
+#contact {
+    background: #fff; /* Set a background color for the contact section */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.social-media-links {
+    margin-bottom: 20px;
+}
+
+.social-media-links a {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.social-media-links img {
+    width: 40px; /* Adjust as needed */
+    transition: transform 0.3s;
+}
+
+.social-media-links img:hover {
+    transform: scale(1.2);
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .navigation-menu {
+        text-align: left;
+    }
+
+    .navigation-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation-menu li {
+        margin: 10px 0;
+    }
+
+    .navigation-menu.active {
+        background: #222; /* Darker background color for mobile menu */
+    }
+
+    .projects-container {
+        flex-direction: column;
+    }
+}
+
+.social-media-links img {
+    width: 30px; /* Adjust as needed */
+    transition: transform 0.3s;
+}
+
+.social-media-links img:hover {
+    transform: scale(1.2);
+}
+
+/* Social Media Links Styles */
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 30px; /* Adjust the size as needed */
+    height: auto;
+}
+
+/* Centering Sections */
+#home,
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensures full viewport height */
+}
+
+#home h2,
+#about h2,
+#home p,
+#about p {
+    text-align: center;
+}
+
+
+/* Navigation Menu Styles */
+.navigation-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-menu li {
+    margin: 0 20px;
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.navigation-menu a:hover {
+    color: #ffca28; /* Change color on hover */
+}
+
+.navigation-menu a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffca28; /* Line color on hover */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navigation-menu a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Navigation Menu Styles */
+.navigation-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-menu li {
+    margin: 0 20px;
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.navigation-menu a:hover {
+    color: #ffca28; /* Change color on hover */
+    transform: scale(1.1); /* Add a slight scale effect on hover */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Apply the following class to elements you want to fade in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Add this class when the element comes into view */
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Home Section Styles */
+#home {
+    background-color: #ffca28; /* Change background color */
+    color: #333;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* About Section Styles */
+#about {
+    background-color: #4CAF50; /* Change background color */
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Portfolio Section Styles */
+#portfolio {
+    background-color: #3498db; /* Change background color */
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #e74c3c; /* Change background color */
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Home Section Header Styles */
+#home h2 {
+    color: #333;
+    font-size: 2.5em;
+}
+
+/* About Section Header Styles */
+#about h2 {
+    color: #fff;
+    font-size: 2.5em;
+}
+
+/* Portfolio Section Header Styles */
+#portfolio h2 {
+    color: #fff;
+    font-size: 2.5em;
+}
+
+/* Contact Section Header Styles */
+#contact h2 {
+    color: #fff;
+    font-size: 2.5em;
+}
+
+/* Home Section Header Styles */
+#home h2 {
+    background-color: green;
+    color: #333;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* About Section Header Styles */
+#about h2 {
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Portfolio Section Header Styles */
+#portfolio h2 {
+    background-color: #28A745;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Contact Section Header Styles */
+#contact h2 {
+    background-color: #DC3545;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Home Section Header Styles */
+#home h2 {
+    background-color: green;
+    color: #333;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* About Section Header Styles */
+#about h2 {
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Portfolio Section Header Styles */
+#portfolio h2 {
+    background-color: green;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Contact Section Header Styles */
+#contact h2 {
+    background-color: blanchedalmond;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Services Section Header Styles */
+#services h2 {
+    background-color: #28a745;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Services List Styles */
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-list li {
+    background-color: #218838;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Additional styling for better readability */
+.services-list li:hover {
+    background-color: #1e7e34;
+    cursor: pointer;
+}
