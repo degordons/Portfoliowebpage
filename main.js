@@ -29,11 +29,6 @@ function toggleComment() {
     commentForm.style.display = (commentForm.style.display === 'block') ? 'none' : 'block';
 }
 
-function toggleComment() {
-    var commentForm = document.getElementById('comment-form');
-    commentForm.style.display = (commentForm.style.display === 'block') ? 'none' : 'block';
-}
-
 function submitComment() {
     var commentInput = document.getElementById('comment-input');
     var comment = commentInput.value.trim();
@@ -44,7 +39,7 @@ function submitComment() {
 
         // Display the submitted comment
         displayComments();
-        
+
         // Clear the input field
         commentInput.value = '';
     }
